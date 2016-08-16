@@ -1,0 +1,5 @@
+E:\Personal\XFramework\XFramework.Repository\bin\Debug\XFramework.Repository.dll
+E:\Personal\XFramework\XFramework.Repository\bin\Debug\XFramework.Repository.pdb
+E:\Personal\XFramework\XFramework.Repository\obj\Debug\XFramework.Repository.csprojResolveAssemblyReference.cache
+E:\Personal\XFramework\XFramework.Repository\obj\Debug\XFramework.Repository.dll
+E:\Personal\XFramework\XFramework.Repository\obj\Debug\XFramework.Repository.pdb

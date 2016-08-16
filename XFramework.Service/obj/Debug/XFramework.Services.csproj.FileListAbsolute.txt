@@ -1,0 +1,11 @@
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Services.dll
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Services.pdb
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Repositories.dll
+E:\Personal\XFramework\XFramework.Service\bin\Debug\EntityFramework.dll
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Repositories.pdb
+E:\Personal\XFramework\XFramework.Service\bin\Debug\EntityFramework.xml
+E:\Personal\XFramework\XFramework.Service\obj\Debug\XFramework.Services.csprojResolveAssemblyReference.cache
+E:\Personal\XFramework\XFramework.Service\obj\Debug\XFramework.Services.dll
+E:\Personal\XFramework\XFramework.Service\obj\Debug\XFramework.Services.pdb
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Models.dll
+E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Models.pdb

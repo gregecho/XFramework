@@ -1,0 +1,7 @@
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\bin\Debug\XFramework.DynamicSearch.UnitTest.dll
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\bin\Debug\XFramework.DynamicSearch.UnitTest.pdb
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\bin\Debug\XFramework.DynamicSearch.dll
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\bin\Debug\XFramework.DynamicSearch.pdb
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\obj\Debug\XFramework.DynamicSearch.UnitTests.csprojResolveAssemblyReference.cache
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\obj\Debug\XFramework.DynamicSearch.UnitTest.dll
+E:\Personal\XFramework\XFramework.DynamicSearch.UnitTest\obj\Debug\XFramework.DynamicSearch.UnitTest.pdb

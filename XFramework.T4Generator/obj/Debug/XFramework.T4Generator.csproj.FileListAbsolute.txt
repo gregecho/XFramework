@@ -1,0 +1,14 @@
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.T4Generator.dll
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.T4Generator.pdb
+E:\Personal\XFramework\XFramework.T4Generator\obj\Debug\XFramework.T4Generator.dll
+E:\Personal\XFramework\XFramework.T4Generator\obj\Debug\XFramework.T4Generator.pdb
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.T4Generator.dll.config
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\EntityFramework.dll
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\EntityFramework.SqlServer.dll
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\EntityFramework.xml
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\EntityFramework.SqlServer.xml
+E:\Personal\XFramework\XFramework.T4Generator\obj\Debug\XFramework.T4Generator.csprojResolveAssemblyReference.cache
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.Model.dll
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.Repositories.dll
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.Model.pdb
+E:\Personal\XFramework\XFramework.T4Generator\bin\Debug\XFramework.Repositories.pdb

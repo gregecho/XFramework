@@ -1,0 +1,28 @@
+﻿
+<script>
+    var Emix = {
+        Api: {
+            Test: {
+                sayHello: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Test", action = "SayHello" })',
+                uploadFiles: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "FileUpload", action = "UploadFiles" })',
+                deleteFile: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "FileUpload", action = "DeleteFile" })',
+
+                getTable: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Test", action = "GetTable" })',
+                addRandomRow: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Test", action = "AddRandomRow" })',
+                addRandomColumn: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Test", action = "AddRandomColumn" })',
+            },
+            Todo: {
+                get: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo"})',
+                post: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo" })',
+                put: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo" })',
+            }
+        },
+        Web: {
+            translationsFolder: '@Url.Content("~/Scripts/app/translations/")',
+            angularLocaleFolder: '@Url.Content("~/Scripts/lib/angular-i18n/")'
+        },
+        Settings: {
+            defaultLanguage: '@XFramework.SPA.App_Start.Settings.DefaultLanguage'
+        }
+    };
+</script>
