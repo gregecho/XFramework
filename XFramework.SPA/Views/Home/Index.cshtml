@@ -4,7 +4,7 @@
 <!--For angularjs intellisense, please see https://github.com/jmbledsoe/angularjs-visualstudio-intellisense-->
 <!--For more please see https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html#layout-->>
 <!-- header logo: style can be found in header.less -->
-<header class="main-header" ng-controller="XFrameworkHeaderCtrl" style="display:none">
+<header class="main-header" ng-controller="XFrameworkHeaderCtrl">
     <a href="#/dashboard" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
         XFramework
@@ -266,7 +266,7 @@
     </nav>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar sidebar-offcanvas" ng-controller="XFrameworkMenuCtrl" style="display:none">
+<aside class="main-sidebar sidebar-offcanvas" ng-controller="XFrameworkMenuCtrl">
     <!-- sidebar: style can be found in sidebar.less -->
     @*slimscroll="{ color: 'rgba(0,0,0,0.2)', height: 'full', removeFromFullHeight: ['.header'], alwaysVisible: false }"*@
     <section class="sidebar">
@@ -313,7 +313,7 @@
     <div class="page" ng-view>
     </div>
 </aside>
-<footer class="main-footer" style="display:none">
+<footer class="main-footer">
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
