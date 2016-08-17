@@ -24,7 +24,7 @@ angular.module(moduleName)
                         method: "POST",
                         url: Emix.Api.Todo.post,
                         cache: false,
-                        params: { todo: todo }
+                        data: todo
                     });
                 },
                 put: function (todo) {

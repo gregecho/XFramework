@@ -43,22 +43,27 @@ namespace XFramework.SPA.Apis
         [ResponseType(typeof(Todo))]
         public Todo Get([FromUri]int id)
         {
-            return new Todo();
+            var todo = todoService.Get(id);
+            return todo;
         }
 
         /// <summary>
         /// POST: api/Todo
         /// </summary>
         /// <param name="todo"></param>
-        public IHttpActionResult Post([FromBody]Todo todo)
+        [Route("api/todo")]
+        public IHttpActionResult Post(Todo todo)
         {
             todoService.Add(todo);
             return Ok();
         }
 
         // PUT: api/Todo/5
-        public void Put(int id, [FromBody]string value)
+       [Route("api/todo")]
+        public IHttpActionResult Put(Todo todo)
         {
+            todoService.Update(todo);
+            return Ok();
         }
 
         /// <summary>
