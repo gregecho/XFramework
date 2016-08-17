@@ -1,4 +1,0 @@
-E:\Personal\XFramework\XFramework.Model\bin\Debug\XFramework.Model.dll
-E:\Personal\XFramework\XFramework.Model\bin\Debug\XFramework.Model.pdb
-E:\Personal\XFramework\XFramework.Model\obj\Debug\XFramework.Model.dll
-E:\Personal\XFramework\XFramework.Model\obj\Debug\XFramework.Model.pdb

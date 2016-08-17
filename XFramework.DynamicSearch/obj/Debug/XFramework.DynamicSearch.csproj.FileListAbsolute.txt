@@ -1,5 +1,0 @@
-E:\Personal\XFramework\XFramework.DynamicSearch\bin\Debug\XFramework.DynamicSearch.dll
-E:\Personal\XFramework\XFramework.DynamicSearch\bin\Debug\XFramework.DynamicSearch.pdb
-E:\Personal\XFramework\XFramework.DynamicSearch\obj\Debug\XFramework.DynamicSearch.dll
-E:\Personal\XFramework\XFramework.DynamicSearch\obj\Debug\XFramework.DynamicSearch.pdb
-E:\Personal\XFramework\XFramework.DynamicSearch\obj\Debug\XFramework.DynamicSearch.csprojResolveAssemblyReference.cache

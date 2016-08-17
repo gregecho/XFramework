@@ -1,4 +1,0 @@
-E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Service.dll
-E:\Personal\XFramework\XFramework.Service\bin\Debug\XFramework.Service.pdb
-E:\Personal\XFramework\XFramework.Service\obj\Debug\XFramework.Service.dll
-E:\Personal\XFramework\XFramework.Service\obj\Debug\XFramework.Service.pdb
