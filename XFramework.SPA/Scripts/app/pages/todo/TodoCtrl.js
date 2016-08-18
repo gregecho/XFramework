@@ -1,4 +1,8 @@
-﻿/*global define*/
+﻿/// <reference path="todoEditModal.html" />
+/// <reference path="../pages/Todo.html" />
+/// <reference path="../pages/todoEditModal.html" />
+/// <reference path="../pages/todoEditModal.html" />
+/*global define*/
 'use strict';
 
 //define(['angular'],
@@ -62,21 +66,27 @@ angular.module('XFrameworkApp.controllers').controller('todoController', ['$scop
                     todoService.put(todo);
                 };
 
-                $scope.popupModal = function (size, todo) {
-                    debugger;
-                    console.log('test');
+                $scope.popupModal = function (todo) {
                     var modalInstance = $uibModal.open({
                         animation: $scope.animationsEnabled,
-                        templateUrl: 'todoModalContent.html',
+                        templateUrl: './Scripts/app/pages/todo/todoEditModal.html',
                         //controller: 'todoModalInstanceCtrl',
-                        controller: function ($uibModalInstance, $scope, todo) {
+                        controller: function ($uibModalInstance, $scope, todoService, todo) {
+                            $scope.todo = todo;
                             $scope.ok = function () {
+                                console.log(todo);
+                                todoService.put(todo);
                                 $uibModalInstance.dismiss('cancel');
                             };
+                            $scope.cancel = function () {
+                                $uibModalInstance.dismiss('cancel');
+                            };
+                            console.log($scope);
                         },
-                        size: size, // lg, sm
+                        //size: size, // lg, sm
                         resolve: {
                             todo: function () {
+                                console.log(todo);
                                 return todo;
                             }
                         }

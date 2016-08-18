@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <link href="~/Content/todo.css" rel="stylesheet" />
 <!--For angularjs intellisense, please see https://github.com/jmbledsoe/angularjs-visualstudio-intellisense -->
 <!--For more please see https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html#layout    -->
@@ -160,11 +161,6 @@
                                     <!-- Task item -->
                                     <a href="#" ng-click="popupModal(todo);$event.stopPropagation();$event.preventDefault();">
                                         <h3>
-                                            @*<input class="toggle" type="checkbox"
-                ng-model="todo.status"
-                ng-click="editTodo(todo);$event.stopPropagation();$event.preventDefault();searchStatus.status=todo.status"
-                ng-true-value="2"
-                ng-false-value="0" />*@
                                             <label>{{todo.title}}</label>
                                         </h3>
                                         <uib-progressbar class="progress-striped active" max="100" min="0" type="success" value="todo.status==2?'100':'50'">
@@ -291,21 +287,3 @@
     </div>
     <strong>Copyright &copy; 2014-2015 <a href="#">XFramework</a>.</strong> All rights reserved.
 </footer>
-
-<script type="text/ng-template" id="todoModalContent.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Todo item</h3>
-    </div>
-    <div class="modal-body">
-        <ul>
-
-            @*<li ng-repeat="item in items">
-                <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-            </li>*@
-        </ul>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
