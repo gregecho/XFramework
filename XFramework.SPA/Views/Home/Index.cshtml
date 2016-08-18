@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/todo.css" rel="stylesheet" />
 <!--For angularjs intellisense, please see https://github.com/jmbledsoe/angularjs-visualstudio-intellisense -->
 <!--For more please see https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html#layout    -->
 <!-- header logo: style can be found in header.less -->
@@ -143,31 +144,28 @@
                 <li class="dropdown tasks-menu" uib-dropdown ng-controller="todoController">
                     <a href="#/" class="dropdown-toggle" uib-dropdown-toggle>
                         <i class="fa fa-tasks"></i>
-                        <span class="label label-danger">{{todos.length}}</span>
+                        <span class="label label-danger">{{remainingCount}}</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        @*<li class="header">You have {{todos.length}} tasks</li>*@
+                    <ul class="dropdown-menu" id="todo-list">
+                        @*<li class="header">You have {{remainingCount}} tasks</li>*@
                         <li class="header" ng-click="$event.stopPropagation()">
-                            @*<form id="todo-form" ng-submit="addTodo()">
-                                    <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
-                                </form>*@
+                            <form id="todo-form" ng-submit="addTodo()">
+                                <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
+                            </form>
                         </li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu" slimscroll="{ height: '200px', size:'3px', alwaysVisible: false }">
-                                <li ng-repeat="todo in todos">
+                                <li ng-repeat="todo in todos | filter:searchStatus" ng-class="{completed: todo.completed}">
                                     <!-- Task item -->
                                     <a href="#/">
                                         <h3>
+                                            <input class="toggle" type="checkbox" ng-model="todo.completed" ng-click="$event.stopPropagation()">
                                             <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
-                                            @*<button class="destroy" ng-click="removeTodo(todo)"></button>*@
-                                            <small class="pull-right">{{todo.status==1?100:50}}%</small>
                                         </h3>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-aqua" style="width:50%" role="progressbar" aria-valuenow="{{todo.status==1?100:50}}" aria-valuemin="0" aria-valuemax="100">
-                                                <span class="sr-only">{{todo.status==1?100:50}}% Complete</span>
-                                            </div>
-                                        </div>
+                                        <uib-progressbar class="progress-striped active" max="100" min="0" type="success" value="todo.completed?'100':'50'">
+                                            <i>{{todo.completed?100:50}}%</i>
+                                        </uib-progressbar>
                                     </a>
                                 </li>
                                 <!-- end task item -->
@@ -175,6 +173,11 @@
                         </li>
                         <li class="footer">
                             <a href="#/">View all tasks</a>
+                            <div class="btn-group" ng-click="$event.stopPropagation()">
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'0'">New</label>
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'1'">Active</label>
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'2'">Completed</label>
+                            </div>
                         </li>
                     </ul>
                 </li>

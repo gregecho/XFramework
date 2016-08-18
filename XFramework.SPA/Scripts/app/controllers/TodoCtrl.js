@@ -6,7 +6,7 @@
         angular.module('XFrameworkApp.controllers').controller('todoController', ['$scope', '$location', 'todoService', 'filterFilter',
             function ($scope, $location, todoService, filterFilter) {
                 var todos = [];
-                debugger;
+                //debugger;
                 todoService.get().then(function (response) {
                     //debugger;
                     $scope.todos = response.data;
@@ -19,7 +19,7 @@
                     // How to deal with server side enum
                     $scope.doneCount = filterFilter(todos, { status: 2 }).length;
                     $scope.remainingCount = todos.length - $scope.doneCount;
-                    $scope.allChecked = !$scope.remainingCount;
+                    //$scope.allChecked = !$scope.remainingCount;
                     // List save?
                     //todoService.put(todos);
                     console.log('trigger watch');
