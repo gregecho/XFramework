@@ -3,8 +3,8 @@
 
 //define(['angular'],
 //    function (angular) {
-        angular.module('XFrameworkApp.controllers').controller('todoController', ['$scope', '$location', 'todoService', 'filterFilter',
-            function ($scope, $location, todoService, filterFilter) {
+angular.module('XFrameworkApp.controllers').controller('todoController', ['$scope', '$location', 'todoService', 'filterFilter', '$uibModal',
+            function ($scope, $location, todoService, filterFilter, $uibModal) {
                 var todos = [];
                 //debugger;
                 todoService.get().then(function (response) {
@@ -60,6 +60,33 @@
                     //$scope.originalTodo = angular.copy(todo);
                     debugger;
                     todoService.put(todo);
+                };
+
+                $scope.popupModal = function (size, todo) {
+                    debugger;
+                    console.log('test');
+                    var modalInstance = $uibModal.open({
+                        animation: $scope.animationsEnabled,
+                        templateUrl: 'todoModalContent.html',
+                        //controller: 'todoModalInstanceCtrl',
+                        controller: function ($uibModalInstance, $scope, todo) {
+                            $scope.ok = function () {
+                                $uibModalInstance.dismiss('cancel');
+                            };
+                        },
+                        size: size, // lg, sm
+                        resolve: {
+                            todo: function () {
+                                return todo;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (selectedItem) {
+                        //$scope.selected = selectedItem;
+                    }, function () {
+                        // $log.info('Modal dismissed at: ' + new Date());
+                    });
                 };
 
                 $scope.doneEditing = function (todo) {
