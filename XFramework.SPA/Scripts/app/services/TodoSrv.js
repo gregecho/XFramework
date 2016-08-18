@@ -28,7 +28,12 @@ angular.module(moduleName)
                     });
                 },
                 put: function (todo) {
-                    return;
+                    return $http({
+                        method: "PUT",
+                        url: Emix.Api.Todo.put,
+                        cache: false,
+                        data: todo
+                    });
                 }
             };
         }]);

@@ -156,15 +156,20 @@
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu" slimscroll="{ height: '200px', size:'3px', alwaysVisible: false }">
-                                <li ng-repeat="todo in todos | filter:searchStatus" ng-class="{completed: todo.completed}">
+                                <li ng-repeat="todo in todos | filter:searchStatus" ng-class="{completed: todo.status==2}">
                                     <!-- Task item -->
                                     <a href="#/">
                                         <h3>
-                                            <input class="toggle" type="checkbox" ng-model="todo.completed" ng-click="$event.stopPropagation()">
+                                            <input class="toggle" type="checkbox" 
+                                                   ng-model="todo.status"
+                                                   ng-click="editTodo(todo);$event.stopPropagation()"
+                                                   ng-true-value="2"
+                                                   ng-false-value="0"
+                                                   >
                                             <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
                                         </h3>
-                                        <uib-progressbar class="progress-striped active" max="100" min="0" type="success" value="todo.completed?'100':'50'">
-                                            <i>{{todo.completed?100:50}}%</i>
+                                        <uib-progressbar class="progress-striped active" max="100" min="0" type="success" value="todo.status==2?'100':'50'">
+                                            <i>{{todo.status==2?100:50}}%</i>
                                         </uib-progressbar>
                                     </a>
                                 </li>

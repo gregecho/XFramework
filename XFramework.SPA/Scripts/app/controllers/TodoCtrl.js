@@ -55,9 +55,11 @@
                 };
 
                 $scope.editTodo = function (todo) {
-                    $scope.editedTodo = todo;
+                    //$scope.editedTodo = todo;
                     // Clone the original todo to restore it on demand.
-                    $scope.originalTodo = angular.copy(todo);
+                    //$scope.originalTodo = angular.copy(todo);
+                    debugger;
+                    todoService.put(todo);
                 };
 
                 $scope.doneEditing = function (todo) {
