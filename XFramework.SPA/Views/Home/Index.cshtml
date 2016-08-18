@@ -178,10 +178,10 @@
                         </li>
                         <li class="footer">
                             <a href="#/">View all tasks</a>
-                            <div class="btn-group" ng-click="$event.stopPropagation()">
-                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'0'">New</label>
-                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'1'">Active</label>
-                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="'2'">Completed</label>
+                            <div class="btn-group" ng-click="$event.stopPropagation()" ng-init="searchStatus.status=0">
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="0">New</label>
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="1">Active</label>
+                                <label class="btn btn-primary" ng-model="searchStatus.status" uib-btn-radio="2">Completed</label>
                             </div>
                         </li>
                     </ul>
