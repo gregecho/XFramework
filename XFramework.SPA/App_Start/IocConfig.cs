@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,13 @@ using XFramework.Repositories.Implementation;
 using XFramework.Repositories.Interfaces;
 using XFramework.Services.Implementation;
 using XFramework.Services.Interfaces;
+using XFramework.SPA.Provider;
 
 namespace XFramework.SPA
 {
     public class IocConfig
     {
-
-        private static IContainer _container;
+        public static IContainer Container { get; set; }
         /// <summary>
         /// For more info see 
         /// :http://docs.autofac.org/en/latest/integration/mvc.html
@@ -49,15 +50,27 @@ namespace XFramework.SPA
                    .Where(t => t.Name.EndsWith("Service"))
                    .AsImplementedInterfaces();
 
+            //http://stackoverflow.com/questions/25871392/autofac-dependency-injection-in-implementation-of-oauthauthorizationserverprovid
+            builder.RegisterType<SimpleAuthorizationServerProvider>()
+                    .As<IOAuthAuthorizationServerProvider>()
+                    //.PropertiesAutowired()
+                    .SingleInstance(); // you only need one instance of this provider
+
+            //builder
+            //    .RegisterType<SimpleRefreshTokenProvider>()
+            //    .As<IAuthenticationTokenProvider>()
+            //    //.PropertiesAutowired()
+            //    .SingleInstance();  // you only need one instance of this provider
+
             // Set the dependency resolver to be Autofac.
-            var container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            Container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(Container));
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(Container);
         }
 
-        public static void TearDown()
-        {
-            _container.Dispose();
-        }
+        //public static void TearDown()
+        //{
+        //    _container.Dispose();
+        //}
     }
 }

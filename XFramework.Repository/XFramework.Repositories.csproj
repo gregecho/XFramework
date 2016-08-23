@@ -62,7 +62,9 @@
     <Compile Include="DbContextScope\IDbContextScopeFactory.cs" />
     <Compile Include="Implementation\TodoRepository.cs" />
     <Compile Include="Implementation\Repository.cs" />
+    <Compile Include="Implementation\UserRepository.cs" />
     <Compile Include="Interfaces\ITodoRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="XFrameworkContext.cs" />
     <Compile Include="Interfaces\IDbContextBase.cs" />

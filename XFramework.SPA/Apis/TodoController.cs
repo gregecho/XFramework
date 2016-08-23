@@ -11,9 +11,11 @@ using XFramework.Services.Interfaces;
 
 namespace XFramework.SPA.Apis
 {
+    [Authorize]
     public class TodoController : ApiController
     {
         private readonly ITodoService todoService;
+
         public TodoController(ITodoService todoService)
         {
             this.todoService = todoService;
@@ -59,7 +61,7 @@ namespace XFramework.SPA.Apis
         }
 
         // PUT: api/Todo/5
-       [Route("api/todo")]
+        [Route("api/todo")]
         public IHttpActionResult Put(Todo todo)
         {
             todoService.Update(todo);
