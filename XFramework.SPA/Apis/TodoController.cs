@@ -11,7 +11,7 @@ using XFramework.Services.Interfaces;
 
 namespace XFramework.SPA.Apis
 {
-    [Authorize]
+    //[Authorize]
     public class TodoController : ApiController
     {
         private readonly ITodoService todoService;
@@ -20,7 +20,6 @@ namespace XFramework.SPA.Apis
         {
             this.todoService = todoService;
         }
-        //public ITodoService todoService { get; set; }
         /// <summary>
         /// GET: api/Todo
         /// </summary>

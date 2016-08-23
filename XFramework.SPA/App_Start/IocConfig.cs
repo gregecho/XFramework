@@ -25,13 +25,13 @@ namespace XFramework.SPA
         /// For more info see 
         /// :http://docs.autofac.org/en/latest/integration/mvc.html
         /// </summary>
-        public static void SetUp()
+        public static void SetUp(HttpConfiguration config)
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<AmbientDbContextLocator>().As<IAmbientDbContextLocator>();
             builder.RegisterType<DbContextScopeFactory>().As<IDbContextScopeFactory>();
             // Get HttpConfiguration.
-            var config = GlobalConfiguration.Configuration;
+            //var config = GlobalConfiguration.Configuration;
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             // Register Web API controllers.
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
@@ -40,8 +40,6 @@ namespace XFramework.SPA
             builder.RegisterWebApiFilterProvider(config);
 
             // Register repositories/services
-            //builder.RegisterType<TodoRepository>().As<ITodoRepository>();
-            //builder.RegisterType<TodoService>().As<ITodoService>();
             builder.RegisterAssemblyTypes(typeof(TodoRepository).Assembly)
                    .Where(t => t.Name.EndsWith("Repository"))
                    .AsImplementedInterfaces();

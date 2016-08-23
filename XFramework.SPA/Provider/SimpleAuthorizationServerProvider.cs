@@ -33,16 +33,12 @@ namespace XFramework.SPA.Provider
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-            //using (AuthRepository _repo = new AuthRepository())
-            //{
             var user = userService.Find(new User { Name=context.UserName, Password= context.Password});
-
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
-            //}
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             identity.AddClaim(new Claim("sub", context.UserName));

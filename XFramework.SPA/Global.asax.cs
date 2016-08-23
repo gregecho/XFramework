@@ -15,7 +15,7 @@ namespace XFramework.SPA
             // MiniProfiler for more information please see http://miniprofiler.com/
             //MiniProfilerEF6.Initialize();
 
-            IocConfig.SetUp();
+            //IocConfig.SetUp();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
