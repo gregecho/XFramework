@@ -28,11 +28,5 @@ angular.module('XFrameworkApp.controllers')
                      $scope.message = err.error_description;
                  });
             };
-
-            $scope.$watchCollection('authService.authentication', function (newValue, oldValue) {
-                debugger;
-                $("body").toggleClass('sidebar-collapse');
-                $("body").toggleClass('sidebar-open');
-            }, true);
         }
     ]);

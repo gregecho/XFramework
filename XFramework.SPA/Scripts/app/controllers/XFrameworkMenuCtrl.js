@@ -14,6 +14,16 @@ angular.module('XFrameworkApp.controllers')
         }
     };
 
+    $scope.$watch('authentication', function (newValue, oldValue) {
+        if (!newValue.isAuth){
+            $("body").addClass('sidebar-collapse');
+            $("body").removeClass('sidebar-open');
+        } else {
+            $("body").removeClass('sidebar-collapse');
+            $("body").addClass('sidebar-open');
+        }
+    }, true);
+
     $scope.menuEntries = [
         {
             text: 'Dashboard',
