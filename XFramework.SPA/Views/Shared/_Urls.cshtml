@@ -2,6 +2,10 @@
 <script>
     var Emix = {
         Api: {
+            Common: {
+                baseUrl: 'http://localhost:59241/',
+                tokenUrl: 'http://localhost:59241/token'
+            },
             Test: {
                 sayHello: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Test", action = "SayHello" })',
                 uploadFiles: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "FileUpload", action = "UploadFiles" })',
@@ -14,6 +18,11 @@
             Todo: {
                 get: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo"})',
                 post: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo" })',
+                put: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo" })',
+            },
+            Account: {
+                login: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "account"})',
+                register: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "account" , action="Register"})',
                 put: '@Url.RouteUrl("DefaultApi", new { httproute = "api", controller = "todo" })',
             }
         },

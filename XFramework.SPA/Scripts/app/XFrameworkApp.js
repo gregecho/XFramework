@@ -17,9 +17,11 @@
         'ngMorris',
         'pascalprecht.translate',
         'blueimp.fileupload',
+        'LocalStorageModule',
         ])
-        .config(['$routeProvider', function ($routeProvider) {
-
+        .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+            //use angular routing without the # prefix character
+            //$locationProvider.html5Mode(true);
             $routeProvider
                 .when('/dashboard', {
                     controller: 'dashboard_index',
@@ -45,12 +47,23 @@
                     controller: 'fullcalendar_index',
                     templateUrl: '../Scripts/app/pages/samples/fullcalendar/index.html'
                 })
+                .when("/login", {
+                    controller: "loginController",
+                    templateUrl: "../Scripts/app/pages/account/login.html"
+                })
+                .when("/signup", {
+                    controller: "signupController",
+                    templateUrl: "../Scripts/app/pages/account/signup.html"
+                })
                 .otherwise({
-                    redirectTo: '/dashboard'
+                    redirectTo: '/login'
                 });
 
-            
+
         }])
+        .config(function ($httpProvider) {
+             $httpProvider.interceptors.push('authInterceptorService');
+         })
         .config(['$translateProvider', function ($translateProvider) {
 
             $translateProvider.useStaticFilesLoader({

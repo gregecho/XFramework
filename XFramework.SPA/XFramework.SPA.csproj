@@ -955,13 +955,18 @@
     <Content Include="Content\site.less" />
     <Content Include="Content\toastr.less" />
     <Content Include="Content\transitions.less" />
+    <Content Include="Scripts\lib\Vendor_dev\Ring1\angularjs\modules\angular-local-storage.js" />
+    <Content Include="Scripts\lib\Vendor\Ring1\angularjs\modules\angular-local-storage.min.js" />
     <Content Include="Scripts\app\common.js" />
     <Content Include="Scripts\app\controllers\appHeaderLte.js" />
-    <Content Include="Scripts\app\controllers\TodoCtrl.js" />
     <Content Include="Scripts\app\controllers\XFrameworkMenuCtrl.js" />
     <Content Include="Scripts\app\controllers\XFrameworkHeaderCtrl.js" />
     <Content Include="Scripts\app\directives\ngLteLayout.js" />
     <Content Include="Scripts\app\directives\ngMorrisCharts.js" />
+    <Content Include="Scripts\app\pages\account\login.html" />
+    <Content Include="Scripts\app\pages\account\loginController.js" />
+    <Content Include="Scripts\app\pages\account\signup.html" />
+    <Content Include="Scripts\app\pages\account\signupController.js" />
     <Content Include="Scripts\app\pages\samples\blank\index.html" />
     <Content Include="Scripts\app\pages\samples\blank\index.js" />
     <Content Include="Scripts\app\pages\samples\dashboard\index.html" />
@@ -972,8 +977,13 @@
     <Content Include="Scripts\app\pages\samples\fullcalendar\index.js" />
     <Content Include="Scripts\app\pages\samples\section\index.html" />
     <Content Include="Scripts\app\pages\samples\section\index.js" />
+    <Content Include="Scripts\app\pages\todo\Todo.html" />
+    <Content Include="Scripts\app\pages\todo\TodoCtrl.js" />
+    <Content Include="Scripts\app\pages\todo\todoEditModal.html" />
+    <Content Include="Scripts\app\pages\account\authService.js" />
+    <Content Include="Scripts\app\services\authInterceptorService.js" />
     <Content Include="Scripts\app\services\httpServices.js" />
-    <Content Include="Scripts\app\services\TodoSrv.js" />
+    <Content Include="Scripts\app\pages\todo\TodoSrv.js" />
     <Content Include="Scripts\app\XFrameworkApp.js" />
     <Content Include="Scripts\lib\angular-i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\lib\angular-i18n\angular-locale_aa-er.js" />
@@ -1824,7 +1834,6 @@
     <Content Include="Scripts\app\translations\en-US.json" />
     <Content Include="Scripts\app\translations\fr-FR.json" />
     <Content Include="Scripts\app\translations\it-IT.json" />
-    <Content Include="Scripts\app\pages\Todo.html" />
     <None Include="Scripts\lib\_references.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -1843,15 +1852,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Shared\_Urls.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\app\filters\" />
     <Folder Include="Scripts\app\models\" />
+    <Folder Include="Scripts\app\views\" />
     <Folder Include="Scripts\lib\angular-i18n\ngLocale\" />
     <Folder Include="Scripts\lib\Vendor\Ring3\" />
     <Folder Include="Scripts\lib\Vendor_dev\Ring3\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
