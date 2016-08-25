@@ -1,12 +1,13 @@
 ﻿
 
-angular.module('XFrameworkApp.controllers').controller('XFrameworkMenuCtrl', ['$scope', '$window', '$location', '$translate', function ($scope, $window, $location/*, $translate*/) {
+angular.module('XFrameworkApp.controllers')
+    .controller('XFrameworkMenuCtrl', ['$scope', '$window', '$location', '$translate', 'authService', function ($scope, $window, $location, $translate, authService) {
     'use strict';
 
     $scope.isMenuActive = function (path) {
         return ('#' + $location.path()).substr(0, path.length) === path;
     };
-
+    $scope.authentication = authService.authentication;
     $scope.expandMenuItem = function (menuEntry) {
         if (menuEntry.isGroup) {
             menuEntry.isExpanded = !menuEntry.isExpanded; //expanded if clicked

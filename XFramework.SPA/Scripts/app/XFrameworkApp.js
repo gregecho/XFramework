@@ -56,14 +56,14 @@
                     templateUrl: "../Scripts/app/pages/account/signup.html"
                 })
                 .otherwise({
-                    redirectTo: '/login'
+                    redirectTo: '/dashboard'
                 });
 
 
         }])
         .config(function ($httpProvider) {
-             $httpProvider.interceptors.push('authInterceptorService');
-         })
+            $httpProvider.interceptors.push('authInterceptorService');
+        })
         .config(['$translateProvider', function ($translateProvider) {
 
             $translateProvider.useStaticFilesLoader({
@@ -78,8 +78,24 @@
             $translateProvider.storageKey('lang');
 
             $translateProvider.useCookieStorage();
-        }]);
-
+        }])
+        .run(['authService', function (authService) {
+            authService.fillAuthData();
+        }])
+        .run(function ($rootScope, $location, authService) {
+            // register listener to watch route changes
+            $rootScope.$on("$routeChangeStart", function (event, next, current) {
+                if (!authService.authentication.isAuth) {
+                    // no logged user, we should be going to #login
+                    if (next.templateUrl == "../Scripts/app/pages/account/login.html") {
+                        // already going to #login, no redirect needed
+                    } else {
+                        // not going to #login, we should redirect now
+                        $location.path("/login");
+                    }
+                }
+            });
+        });
     angular.module('XFrameworkApp.services', []);
     angular.module('XFrameworkApp.controllers', []);
     angular.module('XFrameworkApp.directives', []);

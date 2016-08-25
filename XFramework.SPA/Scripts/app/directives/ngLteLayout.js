@@ -7,14 +7,14 @@
             link: function ($scope, $elem/*, $attr*/) {
                 $($elem).click(function (e) {
                     e.preventDefault();
-
                     //Enable sidebar push menu
                     $("body").toggleClass('sidebar-collapse');
                     $("body").toggleClass('sidebar-open');
                 });
             }
         };
-    }).directive('ngMobileToggleAsideLte', function () {
+    })
+    .directive('ngMobileToggleAsideLte', function () {
         'use strict';
 
         return {
@@ -81,7 +81,7 @@
         return {
             restrict: 'A',
             link: function ($scope, $elem/*, $attr*/) {
-               
+
                 var fnFixRightSize = function () {
                     //Get window height and the wrapper height
                     var neg = $('.main-header').outerHeight() + $('.main-footer').outerHeight();
@@ -143,29 +143,29 @@
         };
     }])
     .directive('highlighter', ['$timeout', function ($timeout) {
-    return {
-        restrict: 'A',
-        scope: {
-            model: '=highlighter'
-        },
-        link: function (scope, element) {
-            scope.$watch('model', function (nv, ov) {
-                if (nv !== ov) {
-                    // apply class
-                    element.addClass('highlight');
+        return {
+            restrict: 'A',
+            scope: {
+                model: '=highlighter'
+            },
+            link: function (scope, element) {
+                scope.$watch('model', function (nv, ov) {
+                    if (nv !== ov) {
+                        // apply class
+                        element.addClass('highlight');
 
-                    // auto remove after some delay
-                    $timeout(function () {
-                        element.removeClass('highlight');
-                    }, 1000);
-                }
-            });
-            element.addClass('highlight');
+                        // auto remove after some delay
+                        $timeout(function () {
+                            element.removeClass('highlight');
+                        }, 1000);
+                    }
+                });
+                element.addClass('highlight');
 
-            // auto remove after some delay
-            $timeout(function () {
-                element.removeClass('highlight');
-            }, 1000);
-        }
-    };
-}]);
+                // auto remove after some delay
+                $timeout(function () {
+                    element.removeClass('highlight');
+                }, 1000);
+            }
+        };
+    }]);

@@ -9,16 +9,15 @@
 var moduleName = 'XFrameworkApp.services';
 angular.module(moduleName)
         .service('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
-            return {
-                _authentication: {
+
+            var authService = {
+                authentication: {
                     isAuth: false,
                     userName: ""
                 },
                 login: function (loginData) {
-                    debugger;
                     var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
                     //var deferred = $q.defer();
-
                     return $http({
                         method: "POST",
                         url: Emix.Api.Common.tokenUrl,
@@ -31,18 +30,26 @@ angular.module(moduleName)
                 },
                 logout: function () {
                     localStorageService.remove('authorizationData');
-                    _authentication.isAuth = false;
-                    _authentication.userName = "";
+                    authService.authentication.isAuth = false;
+                    authService.authentication.userName = "";
                 },
                 register: function (registration) {
-                    logout();
+                    authService.logout();
                     return $http({
                         method: "POST",
                         url: Emix.Api.Account.register,
                         cache: false,
                         data: registration
                     });
+                },
+                fillAuthData: function () {
+                    var authData = localStorageService.get('authorizationData');
+                    if (authData) {
+                        authService.authentication.isAuth = true;
+                        authService.authentication.userName = authData.userName;
+                    }
                 }
             };
+            return authService;
         }]);
 //});

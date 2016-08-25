@@ -15,14 +15,19 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#/" class="sidebar-toggle" data-toggle="offcanvas" role="button" ng-toggle-aside-lte>
+        <a href="#/"
+           class="sidebar-toggle"
+           data-toggle="offcanvas"
+           role="button"
+           ng-toggle-aside-lte
+           ng-if="authentication.isAuth">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
         <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-if="authentication.isAuth">
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu" uib-dropdown>
                     <a href="#/" class="dropdown-toggle" uib-dropdown-toggle>
@@ -186,7 +191,7 @@
                 <li class="dropdown user user-menu" uib-dropdown>
                     <a href="#/" class="dropdown-toggle" uib-dropdown-toggle>
                         <i class="glyphicon glyphicon-user"></i>
-                        <span><span class="hidden-xxs">username</span><i class="caret"></i></span>
+                        <span><span class="hidden-xxs">{{authentication.userName}}</span><i class="caret"></i></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -215,7 +220,7 @@
                                 <a href="#/" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#/" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="#/login" ng-click="logout();$event.stopPropagation()" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>
@@ -235,17 +240,17 @@
     </nav>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar sidebar-offcanvas" ng-controller="XFrameworkMenuCtrl">
+<aside class="main-sidebar sidebar-offcanvas  sidebar-collapse sidebar-open" ng-controller="XFrameworkMenuCtrl">
     <!-- sidebar: style can be found in sidebar.less -->
     @*slimscroll="{ color: 'rgba(0,0,0,0.2)', height: 'full', removeFromFullHeight: ['.header'], alwaysVisible: false }"*@
-    <section class="sidebar">
+    <section class="sidebar" ng-if="authentication.isAuth">
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="~/Content/img/avatar3.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hello, Jane</p>
+                <p>{{authentication.userName}}</p>
                 <a href=""><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -288,3 +293,6 @@
     </div>
     <strong>Copyright &copy; 2014-2015 <a href="#">XFramework</a>.</strong> All rights reserved.
 </footer>
+<script>
+
+</script>

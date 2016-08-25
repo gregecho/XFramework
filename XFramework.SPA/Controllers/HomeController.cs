@@ -16,7 +16,10 @@ namespace XFramework.SPA.Controllers
         }
         public ActionResult Index()
         {
-            var orderList = todoService.Query();
+            return View();
+        }
+        public ActionResult Login()
+        {
             return View();
         }
     }
