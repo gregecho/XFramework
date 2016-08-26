@@ -62,13 +62,13 @@ angular.module('XFrameworkApp.controllers').controller('todoController', ['$scop
                     //$scope.editedTodo = todo;
                     // Clone the original todo to restore it on demand.
                     //$scope.originalTodo = angular.copy(todo);
-                    debugger;
+                    //debugger;
                     todoService.put(todo);
                 };
 
                 $scope.popupModal = function (todo) {
                     var modalInstance = $uibModal.open({
-                        animation: $scope.animationsEnabled,
+                        animation: true,
                         templateUrl: './Scripts/app/pages/todo/todoEditModal.html',
                         //controller: 'todoModalInstanceCtrl',
                         controller: function ($uibModalInstance, $scope, todoService, todo) {
@@ -81,12 +81,12 @@ angular.module('XFrameworkApp.controllers').controller('todoController', ['$scop
                             $scope.cancel = function () {
                                 $uibModalInstance.dismiss('cancel');
                             };
-                            console.log($scope);
+                            //console.log($scope);
                         },
                         //size: size, // lg, sm
                         resolve: {
                             todo: function () {
-                                console.log(todo);
+                                //console.log(todo);
                                 return todo;
                             }
                         }
