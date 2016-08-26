@@ -17,16 +17,24 @@ angular.module(moduleName)
                 },
                 login: function (loginData) {
                     var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
-                    //var deferred = $q.defer();
+                    var deferred = $q.defer();
                     return $http({
                         method: "POST",
                         url: Emix.Api.Common.tokenUrl,
                         cache: false,
                         data: data,
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    }).success(function (response) {
+                        localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+                        authService.authentication.isAuth = true;
+                        authService.authentication.userName = loginData.userName;
+                        deferred.resolve(response);
+                    }).error(function (err, status) {
+                        authService.logout();
+                        deferred.reject(err);
                     });
                     //debugger;
-                    //return deferred.promise;
+                    return deferred.promise;
                 },
                 logout: function () {
                     localStorageService.remove('authorizationData');

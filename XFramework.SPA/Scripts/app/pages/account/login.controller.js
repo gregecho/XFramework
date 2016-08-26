@@ -12,20 +12,14 @@ angular.module('XFrameworkApp.controllers')
             $scope.message = "";
             $scope.logout = authService.logout;
             $scope.login = function () {
-                authService.login($scope.loginData).success(function (response) {
-                    localStorageService.set('authorizationData', { token: response.access_token, userName: $scope.loginData.userName });
-                    authService.authentication.isAuth = true;
-                    authService.authentication.userName = $scope.loginData.userName;
-                    //deferred.resolve(response);
-                }).error(function (err, status) {
-                    logout();
-                    //deferred.reject(err);
-                }).then(function (response) {
+                authService.login($scope.loginData)
+                    .then(function (response) {
                     //$window.location.href = "/home/index";
                     $location.path('/dashboard');
                 },
                  function (err) {
-                     $scope.message = err.error_description;
+                     debugger;
+                     $scope.message = err.data.error_description;
                  });
             };
         }
