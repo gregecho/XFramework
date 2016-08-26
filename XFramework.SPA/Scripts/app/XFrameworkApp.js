@@ -85,7 +85,8 @@
         .run(function ($rootScope, $location, authService) {
             // register listener to watch route changes
             $rootScope.$on("$routeChangeStart", function (event, next, current) {
-                if (!authService.authentication.isAuth) {
+                if (!authService.authentication.isAuth
+                    && next.templateUrl != "../Scripts/app/pages/account/signup.html") {
                     // no logged user, we should be going to #login
                     if (next.templateUrl == "../Scripts/app/pages/account/login.html") {
                         // already going to #login, no redirect needed

@@ -14,12 +14,10 @@ angular.module('XFrameworkApp.controllers')
             $scope.login = function () {
                 authService.login($scope.loginData)
                     .then(function (response) {
-                    //$window.location.href = "/home/index";
                     $location.path('/dashboard');
                 },
                  function (err) {
-                     debugger;
-                     $scope.message = err.data.error_description;
+                     $scope.message = err.error_description;
                  });
             };
         }

@@ -20,7 +20,7 @@ namespace XFramework.SPA.Apis
 
         // POST api/Account/Register
         [AllowAnonymous]
-        [Route("Register")]
+        [HttpPost]
         public IHttpActionResult Register(User userModel)
         {
             if (!ModelState.IsValid)

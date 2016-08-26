@@ -18,7 +18,7 @@ angular.module(moduleName)
                 login: function (loginData) {
                     var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
                     var deferred = $q.defer();
-                    return $http({
+                    $http({
                         method: "POST",
                         url: Emix.Api.Common.tokenUrl,
                         cache: false,
@@ -48,6 +48,8 @@ angular.module(moduleName)
                         url: Emix.Api.Account.register,
                         cache: false,
                         data: registration
+                    }).then(function (response) {
+                        return response;
                     });
                 },
                 fillAuthData: function () {
